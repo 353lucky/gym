@@ -1,0 +1,21 @@
+.Card1 {
+    background-color: grey;
+    text-align: center;
+    width: 50%;
+    float: right;
+    /* color: #fff; */
+  }
+.card{
+    background-color: transparent;
+}
+.card-body{
+    background-color: grey;
+}
+.card-img-top{
+    background-color: grey;
+}
+
+.scroll {
+    max-height: 600px;
+    overflow-y: auto;
+}

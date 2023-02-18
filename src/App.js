@@ -1,24 +1,53 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from "react";
+import GymName from './GymName';
+
 
 function App() {
+  const [items, setItems] = useState([]);
+  const [city, setCity] = useState();
+
+  useEffect(() => {
+    const fetchItem = async () => {
+      const item = await fetch(
+        `https://devapi.wtfup.me/gym/places`
+      );
+      const data = await item.json();
+      console.log(data.data.city);
+      setItems(data.data);
+    };
+    fetchItem();
+  }, []);
+  useEffect(() => {
+    console.log(city);
+  }, [city]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <>
+    <div className='App'>
+    <div className='field'>
+      <h2>Filters</h2>
+      <br/>
+      <br/>
+      <h6>Location</h6>
+      <input className='inputbox' placeholder='Enter location' />
+      <br/>
+      <br/>
+      <h6>Price</h6>
+      <input className='price inputbox' placeholder='Min' />     <input className='price inputbox' placeholder='Max' />
+      <br/>
+      <br/>
+      <h6>Cities</h6>
+        <select className="selectpicker inputbox" onChange={(e)=>setCity(e.value)}>
+        <option selected>Chooose city</option>
+        {items.map((item) => (
+        <option>{item.city}</option>
+        ))}
+        </select>
+      </div>
     </div>
+    <GymName />
+    </>
   );
 }
 
