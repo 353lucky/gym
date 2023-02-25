@@ -1,13 +1,26 @@
 .App {
-  background-color: black;
+  background-color: rgb(27, 24, 24);
   color: #fff;
   height: auto;
   float: left;
-  width: 50%;
+  width: 60%;
   position: sticky;
 }
+/* .heading1{
+  margin-left: 3% !important;
+  width: 100%;
+} */
+.input-group {
+  position: relative;
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  width: 90% !important;
+  margin: 2%;
+}
+
 html{
-  background-color: black;
+  background-color: rgb(27, 24, 24);
 }
 .price{
   width: 92px;
@@ -25,4 +38,11 @@ html{
 ::placeholder{
   color: #fff;
   opacity: 1;
+}
+
+.main-footer {
+  background-color: black;
+  color: white;
+  bottom: -1000px;
+  position: relative;
 }
