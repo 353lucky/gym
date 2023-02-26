@@ -1,10 +1,13 @@
 import './App.css';
+import Footer from "./Components/Footer"
+import Header from "./Components/Header"
+
 import React, { useEffect, useState } from "react";
 import GymName from './GymName';
 
 
 function App() {
-  const [items, setItems] = useState([]);
+ const [items, setItems] = useState([]);
   const [city, setCity] = useState();
 
   useEffect(() => {
@@ -24,30 +27,38 @@ function App() {
 
   return (
   <>
-    <div className='App'>
-    <div className='field'>
-      <h2>Filters</h2>
-      <br/>
-      <br/>
-      <h6>Location</h6>
-      <input className='inputbox' placeholder='Enter location' />
-      <br/>
-      <br/>
-      <h6>Price</h6>
-      <input className='price inputbox' placeholder='Min' />     <input className='price inputbox' placeholder='Max' />
-      <br/>
-      <br/>
-      <h6>Cities</h6>
-        <select className="selectpicker inputbox" onChange={(e)=>setCity(e.value)}>
-        <option selected>Chooose city</option>
-        {items.map((item) => (
-        <option>{item.city}</option>
-        ))}
-        </select>
-      </div>
-    </div>
+    <Header/>
     <GymName />
-    </>
+    <div className='App'>
+        <div className='field'>
+          <h2>Filters</h2>
+          <br/>
+          <br/>
+          <h6>Location</h6>
+          <input className='inputbox' placeholder='Enter location' />
+          <br/>
+          <br/>
+          <h6>Price</h6>
+          <input className='price inputbox' placeholder='Min' />
+          <input className='price inputbox' placeholder='Max' />
+          <br/>
+          <br/>
+          <h6>Cities</h6>
+            <select className="selectpicker inputbox" onChange={(e)=>setCity(e.value)}>
+            <option selected>Chooose city</option>
+            {items.map((item) => (
+            <option>{item.city}</option>
+            ))}
+            </select>
+          </div>
+        </div>
+    <div className="page-container">
+    <div className="content-wrap">
+    <Footer/>
+    </div>
+    </div>
+    
+  </>
   );
 }
 
