@@ -3,8 +3,8 @@
   color: #fff;
   height: auto;
   float: left;
-  width: 60%;
-  position: sticky;
+  width: 30%;
+  position: relative;
 }
 /* .heading1{
   margin-left: 3% !important;
@@ -22,6 +22,14 @@
 html{
   background-color: rgb(27, 24, 24);
 }
+
+.Card1 {
+  background-color: grey;
+  text-align: center;
+  width: 70% !important;
+  float: right;
+  /* color: #fff; */
+}
 .price{
   width: 92px;
 }
@@ -38,6 +46,11 @@ html{
 ::placeholder{
   color: #fff;
   opacity: 1;
+}
+
+.page-container{
+  position: relative;
+  bottom: -1000px;
 }
 
 .main-footer {

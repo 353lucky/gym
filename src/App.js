@@ -39,7 +39,8 @@ function App() {
           <br/>
           <br/>
           <h6>Price</h6>
-          <input className='price inputbox' placeholder='Min' />     <input className='price inputbox' placeholder='Max' />
+          <input className='price inputbox' placeholder='Min' />
+          <input className='price inputbox' placeholder='Max' />
           <br/>
           <br/>
           <h6>Cities</h6>
