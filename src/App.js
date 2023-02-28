@@ -1,63 +1,23 @@
 import './App.css';
 import Footer from "./Components/Footer"
 import Header from "./Components/Header"
+import Sidebar from "./Components/Sidebar"
 
-import React, { useEffect, useState } from "react";
-import GymName from './GymName';
+
+import React from "react";
+import GymName from './Components/GymName';
 
 
 function App() {
- const [items, setItems] = useState([]);
-  const [city, setCity] = useState();
-
-  useEffect(() => {
-    const fetchItem = async () => {
-      const item = await fetch(
-        `https://devapi.wtfup.me/gym/places`
-      );
-      const data = await item.json();
-      console.log(data.data.city);
-      setItems(data.data);
-    };
-    fetchItem();
-  }, []);
-  useEffect(() => {
-    console.log(city);
-  }, [city]);
 
   return (
   <>
+    <div className='App'>
     <Header/>
     <GymName />
-    <div className='App'>
-        <div className='field'>
-          <h2>Filters</h2>
-          <br/>
-          <br/>
-          <h6>Location</h6>
-          <input className='inputbox' placeholder='Enter location' />
-          <br/>
-          <br/>
-          <h6>Price</h6>
-          <input className='price inputbox' placeholder='Min' />
-          <input className='price inputbox' placeholder='Max' />
-          <br/>
-          <br/>
-          <h6>Cities</h6>
-            <select className="selectpicker inputbox" onChange={(e)=>setCity(e.value)}>
-            <option selected>Chooose city</option>
-            {items.map((item) => (
-            <option>{item.city}</option>
-            ))}
-            </select>
-          </div>
-        </div>
-    <div className="page-container">
-    <div className="content-wrap">
+    <Sidebar />
+    </div>
     <Footer/>
-    </div>
-    </div>
-    
   </>
   );
 }

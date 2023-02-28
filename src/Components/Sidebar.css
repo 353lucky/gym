@@ -1,0 +1,25 @@
+
+.input-group {
+    position: relative;
+    display: flex;
+    width: 90% !important;
+    margin: 2%;
+  }
+  
+  .price{
+    width: 92px;
+  }
+  .selectpicker{
+    width: 190px;
+  }
+  
+  .inputbox{
+    background-color: gray;
+    color: #fff;
+    border: 1px solid #fff;
+  }
+  
+  ::placeholder{
+    color: #fff;
+    opacity: 1;
+  }

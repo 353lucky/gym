@@ -10,7 +10,7 @@ function GymName() {
             `https://devapi.wtfup.me/gym/nearestgym?lat=30.325488815850512&long=78.0042384802231`
           );
           const data = await item.json();
-          console.log(data);
+          // console.log(data);
           setItems(data.data);
         };
         fetchItem();
@@ -19,7 +19,7 @@ function GymName() {
   return (
     <div className="Card1">
     <div className="card scroll" >
-        {items.map((item) => (
+        {items && items.map((item) => (
             <>
             <img className="card-img-top" src={item.cover_image} alt={item.cover_image} />
             <div className="card-body">

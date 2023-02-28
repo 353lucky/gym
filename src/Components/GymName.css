@@ -1,7 +1,8 @@
-.Card1 {
+  
+  .Card1 {
     background-color: grey;
     text-align: center;
-    width: 50%;
+    width: 60% !important;
     float: right;
     /* color: #fff; */
   }
@@ -16,6 +17,6 @@
 }
 
 .scroll {
-    max-height: 600px;
+    max-height: 300px;
     overflow-y: auto;
 }
